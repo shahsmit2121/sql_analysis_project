@@ -33,7 +33,7 @@ WITH skills_demand AS (
     WHERE
         job_title_short = 'Data Scientist'
         AND salary_year_avg IS NOT NULL 
-        --AND job_location = 'Anywhere'
+        AND job_location = 'Anywhere'
     GROUP BY 
         skills_dim.skill_id
 )
@@ -52,6 +52,9 @@ ORDER BY
     -- demand_count DESC, avg_salary DESC
     avg_salary DESC, demand_count DESC
 LIMIT 25;
+
+
+
 
 -- rewriting the same query more concisely
 SELECT
